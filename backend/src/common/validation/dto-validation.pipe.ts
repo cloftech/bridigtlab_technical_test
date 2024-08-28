@@ -1,9 +1,9 @@
 import { ArgumentMetadata, HttpException, HttpStatus, Injectable, PipeTransform } from '@nestjs/common';
+import { BrokerApplicationsListRequestDto } from 'src/api/brokers/applications/list-applications/list-applications.dto';
 import { CustomLogger } from '../logger/logger';
 import { ValidationError, validate } from 'class-validator';
 import { paramCase } from 'param-case';
 import { plainToInstance } from 'class-transformer';
-import { BrokerApplicationsListRequestDto } from 'src/api/brokers/applications/list-applications/list-applications.dto';
 
 /**
  * Validation pipe for DTO transformations
@@ -28,9 +28,9 @@ export class DtoValidationPipe implements PipeTransform<any> {
     if (!metatype || !this.toValidate(metatype)) {
       return value;
     }
-    
+
     if (metatype === BrokerApplicationsListRequestDto) {
-      value.status = value.status?.split(',')
+      value.status = value.status?.split(',');
     }
     const object = plainToInstance(metatype, value);
     const errors = await validate(object);

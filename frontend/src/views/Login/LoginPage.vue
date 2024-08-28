@@ -6,6 +6,7 @@ import { useCookies } from '@vueuse/integrations/useCookies';
 import { useRoute, useRouter } from 'vue-router';
 import { useToast } from '@/composables/useToast';
 import Card from 'primevue/card';
+import Modal from './Modal.vue';
 import LoginFooter from './LoginFooter.vue';
 import LoginHeader from './LoginHeader.vue';
 

@@ -54,6 +54,7 @@ import helmet from 'helmet';
       `This is the Swagger interface for the technical competence API.  You can use this to experiment with the API and learn about payloads and error messages for the API endpoints you will be integrating.`,
     )
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, document, <SwaggerCustomOptions>{

@@ -77,11 +77,11 @@ export class ApplicationDto extends PickType(Application, [
   'outgoingAddress',
   'outgoingMortgage',
   'outgoingValuation',
-  'savingsContribution'
-]) { }
+  'savingsContribution',
+]) {}
 
 export class BrokerApplicationPostResponseDto extends SuccessResponseDto {
-  readonly loanAmount: number
+  readonly loanAmount: number;
 }
 
 class BrokerApplicationDto extends PickType(Application, [
@@ -94,7 +94,7 @@ class BrokerApplicationDto extends PickType(Application, [
   'applicantName',
   'incomingAddress',
   'outgoingAddress',
-]) { }
+]) {}
 
 /**
  * The response data
